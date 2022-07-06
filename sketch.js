@@ -9,6 +9,7 @@ let particle_hit = 3;
 
 function setup() {
   createCanvas(1024, 680);
+  createP("right-click to generate a barrier to repel particles");
 
   //generate group of particle
   particle = new Array(particle_population);

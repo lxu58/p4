@@ -39,7 +39,13 @@ class Barrier {
                 }
 
             }else{
-                
+
+                connection = p5.Vector.sub(particle[i].location, this.location);
+                distance = connection.mag();
+                if (distance <= this.radius*1.8) {
+                    particle[i].getKilled = true;
+                }
+
             }
         }
     }

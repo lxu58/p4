@@ -5,6 +5,8 @@ class Particles_Hit {
         this.velocity = createVector();
         this.maxSpeed = 1;
         this.maxSteeringForce = 0.01;
+        this.getKilled = false;
+        this.stroke = 40;
 
     }
 
@@ -67,9 +69,20 @@ class Particles_Hit {
 
     display() {
 
+        if( this.getKilled == false){
         stroke(237, 70, 55);
-        strokeWeight(40);
+        strokeWeight( this.stroke );
         point(this.location.x, this.location.y);
+        }else{
+            if(this.stroke != 0){
+            this.stroke--;
+            stroke(237, 70, 55);
+            strokeWeight( this.stroke);
+            point(this.location.x, this.location.y);
+            }else{
+                
+            }
+        }
     }
 
 
