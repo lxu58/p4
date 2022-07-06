@@ -31,7 +31,16 @@ class Barrier {
 
             }else if(particle_type[i] == 2){
 
-            }else{}
+                connection = p5.Vector.sub(particle[i].location, this.location);
+                distance = connection.mag();
+                if (distance <= this.radius*1.8) {
+                    repelForce = connection.setMag(this.intensity*6);
+                    particle[i].applyForce(repelForce);
+                }
+
+            }else{
+                
+            }
         }
     }
     

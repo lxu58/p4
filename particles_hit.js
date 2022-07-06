@@ -1,9 +1,9 @@
-class Particles_White {
+class Particles_Hit {
     constructor(posX, posY) {
         this.location = createVector(posX, posY);
         this.acceleration = createVector();
         this.velocity = createVector();
-        this.maxSpeed = 7;
+        this.maxSpeed = 1;
         this.maxSteeringForce = 0.01;
 
     }
@@ -67,26 +67,9 @@ class Particles_White {
 
     display() {
 
-        let angle = Math.atan2(mouseY-this.location.y, mouseX-this.location.x);
-
-        push();
-
-        
-        
-        translate(this.location.x ,this.location.y);
-        rotate(angle + 20);
-        rotate(20);
-        stroke(255);
-        strokeWeight(4);
-        noFill();
-        //noStroke();
-        beginShape();
-        vertex(-5, 0 );
-        vertex(5, -10 );
-        vertex(5, 10 );
-        endShape(CLOSE);
-
-        pop();
+        stroke(237, 70, 55);
+        strokeWeight(40);
+        point(this.location.x, this.location.y);
     }
 
 

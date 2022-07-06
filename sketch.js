@@ -1,5 +1,5 @@
 
-let particle_population = 500;
+let particle_population = 1000;
 let random_value = 0;
 
 let particle_yellow = 1;
@@ -8,7 +8,7 @@ let particle_hit = 3;
 
 
 function setup() {
-  createCanvas(1280, 720);
+  createCanvas(1024, 680);
 
   //generate group of particle
   particle = new Array(particle_population);
@@ -16,17 +16,22 @@ function setup() {
 
   for (let i = 0; i < particle.length; i++) {
 
-    random_value = random(0, 99);
+    random_value = random(0, 999);
 
-    if(random_value % 100 >= 2){
+    if(random_value % 1000 >= 50){
 
     particle[i] = new Particles_Yellow(random(0, width), random(0, height));
     particle_type[i] = particle_yellow;
 
-    }else{
+    }else if (random_value % 1000 < 50 && random_value % 100 >= 5){
 
       particle[i] = new Particles_White(random(0, width), random(0, height));
       particle_type[i] = particle_white;
+
+    }else{
+
+      particle[i] = new Particles_Hit(random(0, width), random(0, height));
+      particle_type[i] = particle_hit;
 
     }
 
