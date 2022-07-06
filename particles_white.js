@@ -1,4 +1,4 @@
-class Particles_Yellow {
+class Particles_White {
 	constructor(posX, posY){
     	this.location = createVector(posX, posY);
         this.acceleration = createVector();
@@ -65,9 +65,15 @@ class Particles_Yellow {
     }
     
     display(){
-        stroke(255, 213, 28);
-        strokeWeight(4);
-        point(this.location.x, this.location.y);
+        stroke(228, 240, 182);
+
+        strokeWeight(5);
+
+        fill(255, 238, 219)
+
+        circle(this.location.x, this.location.y, 15);
+
+       // point(this.location.x, this.location.y);
 
     }
 }
